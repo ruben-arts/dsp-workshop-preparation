@@ -17,10 +17,10 @@ This can be done through the [Pixi installation documentation](https://pixi.sh/l
 Then please run the following:
 ```
 # Clone this repo
-git clone https://github.com/your/repo.git
+git clone https://github.com/ruben-arts/dsp-workshop-preparation
 
 # Change to the directory
-cd repo
+cd dsp-workshop-preparation
 
 # Install all environments
 pixi install --all
