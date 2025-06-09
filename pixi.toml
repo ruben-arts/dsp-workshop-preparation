@@ -1,0 +1,41 @@
+[workspace]
+channels = ["https://prefix.dev/conda-forge", "bioconda"]
+platforms = ["osx-arm64", "linux-64", "win-64", "osx-64"]
+
+[dependencies]
+python = "*"
+pytest = "*"
+ruff = "*"
+ipython = "*"
+scipy = "==1.15.1"
+numpy = ">=2.2.6,<3"
+fastqc = { version = ">=0.12.1,<0.13", channel = "bioconda" }
+matplotlib = ">=3.10.3,<4"
+
+[feature.pypi.pypi-dependencies]
+pytest = { git = "https://github.com/pytest-dev/pytest", tag = "8.3.1" }
+matplotlib = ">=3.10.3, <4"
+
+[target.unix.dependencies]
+clang = "*"
+[target.win-64.dependencies]
+vs2017_win-64 = "*"
+
+
+[feature.py310.dependencies]
+python = "3.10.*"
+[feature.py311.dependencies]
+python = "3.11.*"
+[feature.py312.dependencies]
+python = "3.12.*"
+[feature.py313.dependencies]
+python = "3.13.*"
+
+[environments]
+py310 = { features = ["py310"]}
+py311 = { features = ["py311"] }
+py312 = { features = ["py312"] }
+py313 = { features = ["py313"] }
+pypi = { features = ["pypi", "py313"] , no-default-feature = true }
+
+
